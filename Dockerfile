@@ -1,7 +1,10 @@
 FROM ubuntu:latest
 
-# COPY vsftpd.conf /etc/vsftpd.conf
-COPY hola.txt /usr/share/hola.txt
+# COPY hola.txt /usr/share/hola.txt # Example of a simple COPY.
+# COPY vsftpd.conf /etc/vsftpd.conf # Possible solution to a problem, not sure yet.
+# RUN echo "Hello Mexico City!" >> /usr/share/HelloCDMX.txt # Example of a simple RUN.
+RUN apt update
+RUN apt install vsftpd -y
 
 EXPOSE 20 21
 
