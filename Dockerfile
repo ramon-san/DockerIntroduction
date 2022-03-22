@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:trusty
 
 # COPY hola.txt /usr/share/hola.txt # Example of a simple COPY.
 # COPY vsftpd.conf /etc/vsftpd.conf # Possible solution to a problem, not sure yet.
