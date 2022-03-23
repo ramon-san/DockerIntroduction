@@ -20,6 +20,6 @@ RUN systemctl enable vsftpd
 RUN mkdir /srv/ftp/new_location
 RUN echo "Hello world!" >> /srv/ftp/new_location/Hello.txt
 RUN usermod -d /srv/ftp/new_location ftp
-RUN systemctl restart restart
+RUN systemctl restart
 
 EXPOSE 20 21
