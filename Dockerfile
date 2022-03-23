@@ -8,7 +8,7 @@ RUN apt install ftp -y
 RUN apt install iproute2 -y
 
 # Modificamos el archivo de configuración.
-RUN sed 's/anonymous_enable=NO/anonymous_enable=YES/g' vsftpd.conf -i
+RUN sed 's/anonymous_enable=NO/anonymous_enable=YES/g' /etc/vsftpd.conf -i
 
 # Comandos de launch para FTP.
 RUN systemctl start vsftpd
@@ -20,6 +20,6 @@ RUN systemctl enable vsftpd
 RUN mkdir /srv/ftp/new_location
 RUN echo "Hello world!" >> /srv/ftp/new_location/Hello.txt
 RUN usermod -d /srv/ftp/new_location ftp
-RUN systemctl restart
+RUN systemctl restart vsftpd
 
 EXPOSE 20 21
